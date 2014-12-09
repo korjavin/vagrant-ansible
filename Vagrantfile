@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puphpet/debian75-x64"
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook ="provisioning/prerequisite.yml"
+    ansible.playbook ="provisioning/all.yml"
     ansible.sudo=true
   end
 
