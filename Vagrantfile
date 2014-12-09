@@ -10,7 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "puphpet/debian75-x64"
+  # vagrant up --provider=libvirt
+  config.vm.box = "baremettle/debian-7.5"
   config.vm.network "private_network", ip: "192.168.50.4"
 
   config.vm.provision "ansible" do |ansible|
