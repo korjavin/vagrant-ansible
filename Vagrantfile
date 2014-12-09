@@ -13,6 +13,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puphpet/debian75-x64"
   config.vm.network "private_network", ip: "192.168.50.4"
 
+  if Vagrant.has_plugin?("vagrant-cachier")
+      config.cache.scope = :box
+  end
+
   config.vm.provision "ansible" do |ansible|
     ansible.playbook ="provisioning/all.yml"
     ansible.sudo=true
