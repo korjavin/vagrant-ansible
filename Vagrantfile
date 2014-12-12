@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook ="provisioning/all.yml"
+    ansible.playbook ="provisioning/packer.yml"
     ansible.sudo=true
   end
 
